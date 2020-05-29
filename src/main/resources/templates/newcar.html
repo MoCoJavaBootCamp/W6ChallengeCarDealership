@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>New Category</title>
+    <title>New Car</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,13 +48,25 @@
         </ul>
     </div>
 </nav>
-<h2>New Director</h2>
-<form th:action="@{/process}" th:object="" method="post">
+<h2>New Car</h2>
+<form th:action="@{/processcar}" th:object="${car}" method="post">
     <input type="hidden" th:field="*{id}"/>
-    Name: <input type="text" th:field="*{director}"/>
-    <span th:if="${#fields.hasErrors('director')}" th:errors="*{director}"></span> <br/>
-    Genre: <input type="text" th:field="*{genre}"/>
-    <span th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></span> <br/>
+    Make: <input type="text" th:field="*{make}"/>
+    <span th:if="${#fields.hasErrors('make')}" th:errors="*{make}"></span> <br/>
+    Model: <input type="text" th:field="*{model}"/>
+    <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></span> <br/>
+    Year: <input type="number" th:field="*{year}"/>
+    <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span> <br/>
+    Quantity: <input type="number" th:field="*{qty}"/>
+    <span th:if="${#fields.hasErrors('qty')}" th:errors="*{qty}"></span> <br/>
+    Image URL: <input type="text" th:field="*{img}"/>
+    <span th:if="${#fields.hasErrors('img')}" th:errors="*{img}"></span> <br/>
+    Category: <select th:field="*{category}">
+        <option th:each ="category : ${allcategories}"
+                th:text="${category.name}"
+                th:value="${category.id}">
+        </option>
+    </select><br />
 
     <input type="submit" value="submit"/>
 </form>

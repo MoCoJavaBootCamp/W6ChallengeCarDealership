@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeCtrl {
-//    @Autowired DealershipRepository dealershipRepository;
 
     @Autowired CategoryRepository categoryRepository;
 
@@ -53,20 +52,20 @@ public class HomeCtrl {
     }
 
     @RequestMapping("/newcar")
-    public String newCar (Model model) {
+    public String newCar(Model model){
         model.addAttribute("car", new Car());
         model.addAttribute("allcategories", categoryRepository.findAll());
         return "newcar";
     }
 
     @RequestMapping("/updatecar/{id}")
-    public String updateCar(@PathVariable("id") long id, Model model) {
+    public String updateCar(@PathVariable("id") long id, Model model){
         model.addAttribute("car", carRepository.findById(id).get());
         return "newcar";
     }
 
     @RequestMapping("/deletecar/{id}")
-    public String deleteCare(@PathVariable("id") long id) {
+    public String deleteCar(@PathVariable("id") long id){
         Car car = carRepository.findById(id).get();
         carRepository.delete(car);
         return "redirect:/carslist";

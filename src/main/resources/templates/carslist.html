@@ -54,23 +54,25 @@
 <table>
     <thead>
     <tr>
+        <th scope="col">Category</th>
         <th scope="col">Make</th>
         <th scope="col">Model</th>
         <th scope="col">Year</th>
-        <th scope="col">Quantity in Stock</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Options</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="car : ${allcars}">
+        <td th:text="${car.category.name}"></td>
         <td th:text="${car.make}"></td>
         <td th:text="${car.model}"></td>
         <td th:text="${car.year}"></td>
         <td th:text="${car.qty}"></td>
-        <td th:src="${car.img}"></td>
+<!--        <td th:src="${car.img}"></td>-->
         <td>
-            <a th:href="@{/update/{id}(id=${car.id})}">Update</a>
-            <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
+            <a th:href="@{/updatecar/{id}(id=${car.id})}">Update</a>
+            <a th:href="@{/deletecar/{id}(id=${car.id})}">Delete</a>
         </td>
     </tr>
     </tbody>
