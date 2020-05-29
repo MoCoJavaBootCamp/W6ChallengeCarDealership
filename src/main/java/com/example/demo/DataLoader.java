@@ -27,7 +27,7 @@ public class DataLoader implements CommandLineRunner {
 
         category.setName("Sedans");
         category2.setName("Trucks");
-        category2.setName("Vans");
+        category3.setName("Vans");
 
 
         Car car = new Car();
