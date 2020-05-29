@@ -22,7 +22,13 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... strings) throws Exception {
 //        Dealership dealership = new Dealership();
         Category category = new Category();
-        category.setName("Sedan");
+        Category category2 = new Category();
+        Category category3 = new Category();
+
+        category.setName("Sedans");
+        category2.setName("Trucks");
+        category2.setName("Vans");
+
 
         Car car = new Car();
         car.setMake("Volkswagen");
@@ -32,18 +38,42 @@ public class DataLoader implements CommandLineRunner {
         car.setImg("https://www.tflcar.com/wp-content/uploads/2019/04/2019_vw_jetta_04.jpg");
         car.setCategory(category);
 
+        Car car2 = new Car();
+        car2.setMake("Ford");
+        car2.setModel("F-150");
+        car2.setYear(2008);
+        car2.setQty(10);
+        car2.setImg("https://www.tflcar.com/wp-content/uploads/2019/04/2019_vw_jetta_04.jpg");
+        car2.setCategory(category2);
+
+        Car car3 = new Car();
+        car3.setMake("Honda");
+        car3.setModel("Odyssey");
+        car3.setYear(2020);
+        car3.setQty(6);
+        car3.setImg("https://www.tflcar.com/wp-content/uploads/2019/04/2019_vw_jetta_04.jpg");
+        car3.setCategory(category3);
+
         Set<Car> cars = new HashSet<Car>();
         cars.add(car); // add car to cars hashset
+        cars.add(car2); // add car to cars hashset
+        cars.add(car3); // add car to cars hashset
 
         Set<Category> categories = new HashSet<Category>();
         categories.add(category); // add category to categories hashset
+        categories.add(category2); // add category to categories hashset
+        categories.add(category3); // add category to categories hashset
 
 //        dealership.setName("Andrew's Dealership");
 //        dealership.setCategories(categories); // set categories hashset to dealership
 
         // why do I have to save category before car?
         categoryRepository.save(category);
+        categoryRepository.save(category2);
+        categoryRepository.save(category3);
         carRepository.save(car);
+        carRepository.save(car2);
+        carRepository.save(car3);
 
     }
 
