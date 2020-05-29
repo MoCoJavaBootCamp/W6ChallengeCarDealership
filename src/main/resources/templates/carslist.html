@@ -68,10 +68,10 @@
         <td th:text="${car.year}"></td>
         <td th:text="${car.qty}"></td>
         <td th:src="${car.img}"></td>
-<!--        <td>-->
-<!--            <a th:href="@{/update/{id}(id=${album.id})}">Update</a>-->
-<!--            <a th:href="@{/delete/{id}(id=${album.id})}">Delete</a>-->
-<!--        </td>-->
+        <td>
+            <a th:href="@{/update/{id}(id=${car.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
+        </td>
     </tr>
     </tbody>
 </table>
