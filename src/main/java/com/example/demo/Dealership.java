@@ -14,7 +14,7 @@ public class Dealership {
     @OneToMany(mappedBy = "dealership",
         cascade = CascadeType.ALL,
         fetch = FetchType.EAGER)
-    private Set<Car> cars;
+    private Set<Category> categories;
 
     public Dealership(){}
 
@@ -34,11 +34,11 @@ public class Dealership {
         this.name = name;
     }
 
-    public Set<Car> getCars() {
-        return cars;
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    public void setCars(Set<Car> cars) {
-        this.cars = cars;
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
 }

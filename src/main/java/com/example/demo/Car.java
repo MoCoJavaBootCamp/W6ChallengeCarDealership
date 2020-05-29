@@ -2,9 +2,7 @@ package com.example.demo;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 public class Car {
@@ -15,8 +13,12 @@ public class Car {
     private String make;
     private String model;
     private int year;
-    private String category;
+
     private int qty;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 
     public Car(){}
@@ -53,19 +55,19 @@ public class Car {
         this.year = year;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public int getQty() {
         return qty;
     }
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
