@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h2>Album List</h2>
+<button><a th:href="@{/newalbum}">Add New Album</a></button>
+
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Album</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ">
+        <td th:inline="text">
+            <a th:href="@{/detail/{id}(id=${album.id})}">[[${album.name}]]</a></td>
+        <td th:text="${album.genre}"></td>
+        <td th:text="${album.year}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${album.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${album.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

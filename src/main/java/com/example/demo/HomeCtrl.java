@@ -15,7 +15,7 @@ public class HomeCtrl {
     @Autowired CarRepository carRepository;
 
     @RequestMapping("/categorieslist")
-    public String index(Model model) {
+    public String categorieslist(Model model) {
         model.addAttribute("allcategories", categoryRepository.findAll());
         return "categorieslist";
     }
@@ -27,26 +27,26 @@ public class HomeCtrl {
     }
 
     @RequestMapping("/processcategory")
-    public String process(@ModelAttribute("category") Category category) {
+    public String processcategory(@ModelAttribute("category") Category category) {
         categoryRepository.save(category);
         return "redirect:/categorieslist";
     }
 
     @RequestMapping("/carslist")
-    public String index(Model model) {
+    public String carslist(Model model) {
         model.addAttribute("allcars", carRepository.findAll());
         return "carslist";
     }
 
     @RequestMapping("/newcar")
-    public String newCategory (Model model) {
+    public String newCar (Model model) {
         model.addAttribute("car", new Car());
         model.addAttribute("allcategories", categoryRepository.findAll());
         return "newcar";
     }
 
     @RequestMapping("/processcar")
-    public String process(@ModelAttribute("car") Car car) {
+    public String processcar(@ModelAttribute("car") Car car) {
         carRepository.save(car);
         return "redirect:/carslist";
     }

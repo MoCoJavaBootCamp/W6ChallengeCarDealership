@@ -21,26 +21,28 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
 //        Dealership dealership = new Dealership();
-        Category sedanCategory = new Category();
-        Set<Category> categoriesSet = new HashSet<Category>();
-        Car jettaCar = new Car();
-        Set<Car> carsSet = new HashSet<Car>();
+        Category category = new Category();
+        category.setName("Sedan");
 
-        jettaCar.setMake("Volkswagen");
-        jettaCar.setModel("Jetta");
-        jettaCar.setYear(2019);
-        jettaCar.setQty(3);
-        jettaCar.setCategory(sedanCategory);
+        Car car = new Car();
+        car.setMake("Volkswagen");
+        car.setModel("Jetta");
+        car.setYear(2019);
+        car.setQty(3);
+        car.setCategory(category);
 
-        carsSet.add(jettaCar); // add jettaCar to carsSet hashset
-        sedanCategory.setName("Sedan");
-        categoriesSet.add(sedanCategory); // add sedanCategory to categoriesSet hashset
+        Set<Car> cars = new HashSet<Car>();
+        cars.add(car); // add car to cars hashset
+
+        Set<Category> categories = new HashSet<Category>();
+        categories.add(category); // add category to categories hashset
 
 //        dealership.setName("Andrew's Dealership");
-//        dealership.setCategories(categoriesSet); // set categoriesSet hashset to dealership
+//        dealership.setCategories(categories); // set categories hashset to dealership
 
-        carRepository.save(jettaCar);
-        categoryRepository.save(sedanCategory);
+        // why do I have to save category before car?
+        categoryRepository.save(category);
+        carRepository.save(car);
 
     }
 
