@@ -14,13 +14,16 @@ public class Category {
     @OneToMany(mappedBy = "category",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)
-    private Set<Car> cars;
+    private Set<Car> cars; //Sedan: Jetta, Accord, Corolla
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "dealership_id")
     private Dealership dealership;
 
-    public Category(){}
+    public Category(){
+        this.dealership = null;
+        this.cars = null;
+    }
 
     public long getId() {
         return id;

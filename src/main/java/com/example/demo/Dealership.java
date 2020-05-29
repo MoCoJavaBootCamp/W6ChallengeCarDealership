@@ -16,7 +16,9 @@ public class Dealership {
         fetch = FetchType.EAGER)
     private Set<Category> categories;
 
-    public Dealership(){}
+    public Dealership(){
+        this.categories = null;
+    }
 
     public long getId() {
         return id;

@@ -13,6 +13,7 @@ public class HomeCtrl {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("cars", )
+        model.addAttribute("dealerships", dealershipRepository.findAll());
+        return "index";
     }
 }
