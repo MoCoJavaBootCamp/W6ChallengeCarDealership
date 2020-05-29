@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -9,6 +11,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
     private String name;
 
     @OneToMany(mappedBy = "category",

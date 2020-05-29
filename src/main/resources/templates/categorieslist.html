@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="categorieslist.html">Andrew's Dealership</a>
+    <a class="navbar-brand" href="/categorieslist">Andrew's Dealership</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,33 +21,35 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="categorieslist.html" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="/categorieslist" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="categorieslist.html">Categories List</a>
+                    <a class="dropdown-item" href="/categorieslist">Categories List</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="newcategory.html">Add Category</a>
+                    <a class="dropdown-item" href="/newcategory">Add Category</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="carslist.html" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="/carslist" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Cars
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="carslist.html">Cars List</a>
+                    <a class="dropdown-item" href="/carslist">Cars List</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="newcar.html">Add Car</a>
+                    <a class="dropdown-item" href="/newcar">Add Car</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
 <h2>Categories List</h2>
-<button><a th:href="@{/newcategory}">Add New Category</a></button>
+<button><a th:href="@{/newcategory}">Add Category</a></button>
 
 <table>
     <thead>

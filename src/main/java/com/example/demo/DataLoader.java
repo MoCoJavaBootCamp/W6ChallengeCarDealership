@@ -29,6 +29,7 @@ public class DataLoader implements CommandLineRunner {
         car.setModel("Jetta");
         car.setYear(2019);
         car.setQty(3);
+        car.setImg("https://www.tflcar.com/wp-content/uploads/2019/04/2019_vw_jetta_04.jpg");
         car.setCategory(category);
 
         Set<Car> cars = new HashSet<Car>();

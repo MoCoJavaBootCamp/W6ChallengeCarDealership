@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.sun.istack.NotNull;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
@@ -11,10 +12,19 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
     private String make;
+
+    @NotNull
     private String model;
+
+    @NotNull
     private int year;
+
+    @NotNull
     private int qty;
+
+    private String img;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
@@ -63,6 +73,14 @@ public class Car {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Category getCategory() {
