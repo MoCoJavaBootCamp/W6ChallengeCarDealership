@@ -12,16 +12,16 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.REMOVE,
             fetch = FetchType.EAGER)
     private Set<Car> cars; //Sedan: Jetta, Accord, Corolla
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "dealership_id")
-    private Dealership dealership;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "dealership_id")
+//    private Dealership dealership;
 
     public Category(){
-        this.dealership = null;
+//        this.dealership = null;
         this.cars = null;
     }
 
@@ -49,11 +49,11 @@ public class Category {
         this.cars = cars;
     }
 
-    public Dealership getDealership() {
-        return dealership;
-    }
-
-    public void setDealership(Dealership dealership) {
-        this.dealership = dealership;
-    }
+//    public Dealership getDealership() {
+//        return dealership;
+//    }
+//
+//    public void setDealership(Dealership dealership) {
+//        this.dealership = dealership;
+//    }
 }

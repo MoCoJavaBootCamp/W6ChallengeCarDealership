@@ -9,8 +9,8 @@ import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-    @Autowired
-    DealershipRepository dealershipRepository;
+//    @Autowired
+//    DealershipRepository dealershipRepository;
 
     @Autowired
     CategoryRepository categoryRepository;
@@ -20,7 +20,7 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        Dealership dealership = new Dealership();
+//        Dealership dealership = new Dealership();
         Category sedanCategory = new Category();
         Set<Category> categoriesSet = new HashSet<Category>();
         Car jettaCar = new Car();
@@ -36,8 +36,8 @@ public class DataLoader implements CommandLineRunner {
         sedanCategory.setName("Sedan");
         categoriesSet.add(sedanCategory); // add sedanCategory to categoriesSet hashset
 
-        dealership.setName("Andrew's Dealership");
-        dealership.setCategories(categoriesSet); // set categoriesSet hashset to dealership
+//        dealership.setName("Andrew's Dealership");
+//        dealership.setCategories(categoriesSet); // set categoriesSet hashset to dealership
 
         carRepository.save(jettaCar);
         categoryRepository.save(sedanCategory);

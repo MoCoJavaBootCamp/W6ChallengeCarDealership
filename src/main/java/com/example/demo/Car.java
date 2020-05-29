@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class Car {
+    @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -13,7 +14,6 @@ public class Car {
     private String make;
     private String model;
     private int year;
-
     private int qty;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -22,7 +22,7 @@ public class Car {
 
 
     public Car(){
-        this.category = null;
+//        this.category = null;
     }
 
     public long getId() {
